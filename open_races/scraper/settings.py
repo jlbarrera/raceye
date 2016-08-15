@@ -10,6 +10,9 @@ USER_AGENT = '%s/%s' % (BOT_NAME, '1.0')
 
 #Scrapy 0.20+
 ITEM_PIPELINES = {
+    'dynamic_scraper.pipelines.DjangoImagesPipeline': 200,
     'dynamic_scraper.pipelines.ValidationPipeline': 400,
     'open_races.scraper.pipelines.DjangoWriterPipeline': 800,
 }
+
+IMAGES_STORE = os.path.join(PROJECT_ROOT, '../thumbnails')

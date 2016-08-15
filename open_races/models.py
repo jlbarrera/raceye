@@ -16,8 +16,12 @@ class RacesWebsite(models.Model):
 class Race(models.Model):
     title = models.CharField(max_length=200)
     races_website = models.ForeignKey(RacesWebsite)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, null=True)
+    date = models.DateField(blank=True, null=True)
     url = models.URLField()
+    image = models.CharField(max_length=200, blank=True, null=True)
+    city = models.CharField(max_length=200, blank=True, null=True)
+    province = models.CharField(max_length=200, blank=True, null=True)
     checker_runtime = models.ForeignKey(SchedulerRuntime, blank=True, null=True, on_delete=models.SET_NULL)
 
     def __unicode__(self):
