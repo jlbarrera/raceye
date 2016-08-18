@@ -15,4 +15,8 @@ ITEM_PIPELINES = {
     'open_races.scraper.pipelines.DjangoWriterPipeline': 800,
 }
 
-IMAGES_STORE = os.path.join(PROJECT_ROOT, '../thumbnails')
+IMAGES_STORE = os.path.join(PROJECT_ROOT, '../../media/thumbnails/')
+
+IMAGES_THUMBS = {
+    'small': (170, 170),
+}
